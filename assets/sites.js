@@ -23,7 +23,7 @@ window.SITES = [
     name: "Global Daily Tracker",
     tag: "Markets",
     url: "https://frontier-research.github.io/frontier-global-daily-tracker/",
-    desc: "Ten global instruments — indices, 10Y, Brent, gold, bitcoin — refreshed twice a day."
+    desc: "Ten global instruments including indices, 10Y, Brent, gold and bitcoin are tracked refreshed twice a day."
   },
   {
     name: "Time Twister Formatting Tool",
