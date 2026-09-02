@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07201F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EDF3F1" media="(prefers-color-scheme: light)">
+
+<title>Frontier Group — research instruments</title>
+<meta name="description" content="Dashboards and trackers built by the Frontier Group research desk for reading the Sri Lankan economy.">
+<meta property="og:title" content="Frontier Group — research instruments">
+<meta property="og:description" content="Dashboards and trackers for reading the Sri Lankan economy.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#instruments">Skip to the list of instruments</a>
+
+<div class="bgrid" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <header class="top">
+    <p class="sig">Frontier Group · research desk</p>
+    <button type="button" class="mode" id="mode-toggle" aria-label="Switch to light mode">
+      <span class="mode-text">Light mode</span>
+      <span class="knob" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+    <div class="head">
+      <h1>A shelf of <strong>instruments</strong> for reading the Sri Lankan economy.</h1>
+      <p class="sub">Prices, external accounts, markets. Each one does a single job, and does it on a schedule.</p>
+    </div>
+
+    <div class="chart" id="chart" aria-hidden="true"></div>
+
+    <h2 class="sr-only" id="instruments">Instruments</h2>
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden>No instruments have been published yet.</p>
+  </main>
+
+  <footer>
+    <p class="end">Built and maintained in Colombo.</p>
+  </footer>
+
+</div>
+
+<script src="assets/sites.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
