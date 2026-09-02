@@ -176,9 +176,42 @@
     return;
   }
 
-  var cards = instruments.map(function (item) {
+  // Split the instruments into rows of at most three, never
+  // leaving a single item stranded on the last row: 5 becomes
+  // 3+2, 7 becomes 3+2+2, 4 becomes 2+2. Every row then spans
+  // the full width, so an odd count never reads as unfinished.
+  function rowSizes(count) {
+    if (count <= 3) return [count];
+    var rows = [];
+    var left = count;
+    while (left > 0) {
+      if (left === 4) { rows.push(2); left = 2; continue; }
+      if (left <= 3) { rows.push(left); left = 0; continue; }
+      rows.push(3);
+      left -= 3;
+    }
+    return rows;
+  }
+
+  // Six-column grid: three-up spans 2, two-up spans 3, one alone spans 6.
+  var SPAN_CLASS = { 1: "span-6", 2: "span-3", 3: "span-2" };
+
+  var layout = [];
+  rowSizes(instruments.length).forEach(function (size) {
+    for (var i = 0; i < size; i++) layout.push(size);
+  });
+
+  var cards = instruments.map(function (item, index) {
     var card = buildCard(item);
-    list.appendChild(card.parentNode);
+    var li = card.parentNode;
+    var size = layout[index];
+    li.className = SPAN_CLASS[size];
+    // At the two-column breakpoint, a lone trailing card widens
+    // instead of leaving a gap beside it.
+    if (index === instruments.length - 1 && instruments.length % 2 === 1) {
+      li.className += " odd-last";
+    }
+    list.appendChild(li);
     return card;
   });
 
