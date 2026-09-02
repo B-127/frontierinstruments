@@ -1,7 +1,6 @@
-# Frontier instruments index
+# Frontier Instruments 
 
-Landing page for the research desk's micro-sites. Static, no build step, no
-dependencies. Everything runs in the browser.
+Landing page for the research desk's micro-sites. 
 
 ## Adding or changing a site
 
@@ -36,15 +35,6 @@ and the card falls back to the dimmed state.
 `.nojekyll` is included so GitHub serves the files as-is rather than running
 them through Jekyll.
 
-## Changing the look
-
-All colour lives in the two variable blocks at the top of `assets/styles.css` —
-one for dark, one for light. Change a value there and it moves everywhere it is
-used. The named roles are `--bg`, `--grid`, `--ink`, `--dim`, `--line`, `--acc`,
-`--card`, `--edge`, `--hot`.
-
-If you swap colours, keep text against its background above 4.5:1 contrast, and
-the series line above 3:1. The current values clear both.
 
 ## Notes on how it is built
 
